@@ -12,6 +12,8 @@ class SendMessage
 
     private $objects = [];
 
+    private $replyMarkup;
+
     public function __construct(int $chatId, string $text)
     {
         set_value($this, 'chat_id', $chatId);
@@ -40,6 +42,12 @@ class SendMessage
 
     public function setReplyMarkup(ReplyMarkup $replyMarkup): void
     {
+        $this->replyMarkup = $replyMarkup;
         set_value($this, 'reply_markup', json_encode(get_values($replyMarkup)));
+    }
+    
+    public function getReplyMarkup(): ?ReplyMarkup
+    {
+        return $this->replyMarkup;
     }
 }
