@@ -41,6 +41,11 @@ class Message
         return get_object($this, 'document', Document::class);
     }
 
+    public function getNewChatMember(): ?NewChatMember
+    {
+        return get_object($this, 'new_chat_member', NewChatMember::class);
+    }
+
     /**
      * It can be used only after sending invoice and successful paying for it.
      *
