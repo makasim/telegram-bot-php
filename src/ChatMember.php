@@ -5,7 +5,7 @@ namespace Formapro\TelegramBot;
 use function Formapro\Values\get_object;
 use function Formapro\Values\get_value;
 
-class NewChatMember
+class ChatMember
 {
     private $values = [];
 
