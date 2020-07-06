@@ -41,14 +41,14 @@ class Message
         return get_object($this, 'document', Document::class);
     }
 
-    public function getNewChatMember(): ?ChatMember
+    public function getNewChatMember(): ?NewChatMember
     {
-        return get_object($this, 'new_chat_member', ChatMember::class);
+        return get_object($this, 'new_chat_member', NewChatMember::class);
     }
 
-    public function getLeftChatMember(): ?ChatMember
+    public function getLeftChatMember(): ?LeftChatMember
     {
-        return get_object($this, 'left_chat_member', ChatMember::class);
+        return get_object($this, 'left_chat_member', LeftChatMember::class);
     }
 
     /**
