@@ -237,4 +237,20 @@ class Bot
     {
         return $this->token;
     }
+
+    public function getMe(): User
+    {
+        $response = $this->httpClient->post($this->getMethodUrl('getMe'));
+
+        $json = json_decode((string)$response->getBody(), true);
+
+        if (isset($json['ok']) && $json['ok']) {
+            $user = new User();
+            set_values($user, $json['result']);
+
+            return $user;
+        }
+
+        throw new \LogicException('Unexpected response: ' . (string) $response->getBody());
+    }
 }
